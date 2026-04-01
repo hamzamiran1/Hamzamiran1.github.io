@@ -1,29 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Hamza Miran</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza Miran</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body{
-background:black;
-color:white;
-font-family:Arial;
-text-align:center;
-padding-top:120px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-h1{
-color:gold;
-font-size:50px;
-}
-</style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
 
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    }
+
+    .overlay {
+      max-width: 900px;
+      animation: fadeUp 1.3s ease;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #d4af37;
+      border: 1px solid rgba(212,175,55,0.5);
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 92px);
+      color: #f3c623;
+      text-shadow: 0 0 24px rgba(243,198,35,0.18);
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2.5vw, 30px);
+      color: #f1f1f1;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      font-size: clamp(16px, 2vw, 22px);
+      color: #d9d9d9;
+      max-width: 700px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: black;
+      box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .section {
+      padding: 90px 22px;
+      background: #050505;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #f3c623;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .section-text {
+      text-align: center;
+      color: #d0d0d0;
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 auto 46px;
+      line-height: 1.7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #101010, #0a0a0a);
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.45);
+    }
+
+    .card h3 {
+      color: #f3c623;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #d7d7d7;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px 48px;
+      color: #9f9f9f;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: #050505;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>Hamza Miran</h1>
-<p>No Friends But The Mountains</p>
+  <section class="hero">
+    <div class="overlay">
+      <div class="tag">Kurdistan • Vision • Legacy</div>
+      <h1>Hamza Miran</h1>
+      <p class="subtitle">Student • Future Engineer • Builder</p>
+      <p class="quote">No Friends But The Mountains.</p>
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">Explore</a>
+        <a href="#vision" class="btn btn-secondary">My Vision</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-text">
+        I’m Hamza Miran. I’m focused on building a strong future through study, ambition, discipline, and vision.
+        My path is shaped by science, engineering, and a deep pride in identity and legacy.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Discipline</h3>
+          <p>I believe real success is built through consistency, patience, and hard work every day.</p>
+        </div>
+        <div class="card">
+          <h3>Ambition</h3>
+          <p>I aim high, think long term, and want to build a life that stands for something powerful.</p>
+        </div>
+        <div class="card">
+          <h3>Identity</h3>
+          <p>Kurdistan, mountains, strength, and legacy are more than symbols — they are part of how I see life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="vision">
+    <div class="container">
+      <h2 class="section-title">My Vision</h2>
+      <p class="section-text">
+        This website is the beginning. A small digital home that will grow into something bigger:
+        projects, achievements, ideas, and everything I build next.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Engineering</h3>
+          <p>A future built on knowledge, technical skill, and international ambition.</p>
+        </div>
+        <div class="card">
+          <h3>Legacy</h3>
+          <p>To create something meaningful, respected, and lasting.</p>
+        </div>
+        <div class="card">
+          <h3>Growth</h3>
+          <p>From a simple first website to a full personal brand and professional presence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Hamza Miran — Built with vision
+  </footer>
 
 </body>
 </html>
