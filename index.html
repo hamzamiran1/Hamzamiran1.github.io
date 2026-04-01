@@ -22,6 +22,52 @@
       overflow-x: hidden;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #f3c623;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #f5f5f5;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f3c623;
+    }
+
     .hero {
       min-height: 100vh;
       position: relative;
@@ -29,61 +75,69 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 130px 20px 60px;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.82)),
         url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
     }
 
-    .overlay {
-      max-width: 900px;
-      animation: fadeUp 1.3s ease;
+    .hero-content {
+      max-width: 950px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .flag {
+      width: 110px;
+      max-width: 28vw;
+      margin-bottom: 24px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
     .tag {
       display: inline-block;
-      color: #d4af37;
-      border: 1px solid rgba(212,175,55,0.5);
+      color: #f3c623;
+      border: 1px solid rgba(243,198,35,0.35);
+      background: rgba(255,255,255,0.05);
       padding: 10px 18px;
       border-radius: 999px;
-      margin-bottom: 24px;
       font-size: 14px;
       letter-spacing: 1px;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(4px);
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(42px, 8vw, 92px);
+      font-size: clamp(46px, 8vw, 95px);
       color: #f3c623;
-      text-shadow: 0 0 24px rgba(243,198,35,0.18);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      text-shadow: 0 0 25px rgba(243,198,35,0.15);
     }
 
-    .subtitle {
-      font-size: clamp(18px, 2.5vw, 30px);
-      color: #f1f1f1;
-      margin-bottom: 18px;
+    .hero-subtitle {
+      font-size: clamp(18px, 2.8vw, 31px);
+      color: #f5f5f5;
+      margin-bottom: 14px;
     }
 
-    .quote {
+    .hero-quote {
       font-size: clamp(16px, 2vw, 22px);
-      color: #d9d9d9;
-      max-width: 700px;
-      margin: 0 auto 36px;
-      line-height: 1.6;
+      color: #dddddd;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto 30px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
-      gap: 16px;
       justify-content: center;
+      gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
     .btn {
-      text-decoration: none;
-      padding: 14px 26px;
+      padding: 14px 28px;
       border-radius: 999px;
       font-weight: bold;
       transition: 0.3s ease;
@@ -91,51 +145,83 @@
     }
 
     .btn-primary {
-      background: #d4af37;
+      background: #f3c623;
       color: black;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+      box-shadow: 0 10px 25px rgba(243,198,35,0.22);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+      transform: translateY(-3px);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.25);
       color: white;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(4px);
+      background: rgba(255,255,255,0.05);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.10);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-box {
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(243,198,35,0.16);
+      border-radius: 18px;
+      padding: 22px;
+      backdrop-filter: blur(6px);
+    }
+
+    .stat-box h3 {
+      color: #f3c623;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .stat-box p {
+      color: #d6d6d6;
+      font-size: 14px;
     }
 
     .section {
-      padding: 90px 22px;
+      padding: 90px 20px;
+    }
+
+    .dark {
       background: #050505;
     }
 
+    .soft {
+      background: #0a0a0a;
+    }
+
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
     }
 
     .section-title {
-      font-size: 36px;
+      text-align: center;
+      font-size: 38px;
       color: #f3c623;
       margin-bottom: 18px;
-      text-align: center;
     }
 
     .section-text {
       text-align: center;
-      color: #d0d0d0;
+      max-width: 800px;
+      margin: 0 auto 45px;
+      color: #d3d3d3;
+      line-height: 1.8;
       font-size: 18px;
-      max-width: 760px;
-      margin: 0 auto 46px;
-      line-height: 1.7;
     }
 
     .cards {
@@ -145,17 +231,17 @@
     }
 
     .card {
-      background: linear-gradient(180deg, #101010, #0a0a0a);
-      border: 1px solid rgba(212,175,55,0.15);
-      border-radius: 20px;
+      background: linear-gradient(180deg, #111111, #090909);
+      border: 1px solid rgba(243,198,35,0.14);
+      border-radius: 22px;
       padding: 28px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.24);
+      transition: 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      border-color: rgba(212,175,55,0.45);
+      border-color: rgba(243,198,35,0.4);
     }
 
     .card h3 {
@@ -165,97 +251,274 @@
     }
 
     .card p {
-      color: #d7d7d7;
-      line-height: 1.6;
+      color: #d6d6d6;
+      line-height: 1.7;
     }
 
-    footer {
+    .timeline {
+      display: grid;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      padding: 24px;
+      border-left: 4px solid #f3c623;
+      background: #101010;
+      border-radius: 14px;
+    }
+
+    .timeline-item h3 {
+      color: #f3c623;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      color: #d7d7d7;
+      line-height: 1.7;
+    }
+
+    .quote-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 34px;
+      border: 1px solid rgba(243,198,35,0.18);
+      border-radius: 24px;
+      background: linear-gradient(180deg, #111111, #080808);
       text-align: center;
-      padding: 32px 20px 48px;
-      color: #9f9f9f;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .quote-box p {
+      font-size: 24px;
+      line-height: 1.7;
+      color: #f4f4f4;
+    }
+
+    .footer {
+      padding: 38px 20px 50px;
+      text-align: center;
       border-top: 1px solid rgba(255,255,255,0.08);
       background: #050505;
+    }
+
+    .footer p {
+      color: #9d9d9d;
+      margin-bottom: 10px;
+    }
+
+    .footer .footer-line {
+      color: #f3c623;
+      font-weight: bold;
     }
 
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(28px);
       }
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .quote-box p {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="overlay">
-      <div class="tag">Kurdistan • Vision • Legacy</div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Hamza Miran</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#values">Values</a>
+        <a href="#vision">Vision</a>
+        <a href="#journey">Journey</a>
+        <a href="#legacy">Legacy</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img
+        class="flag"
+        src="https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_Kurdistan.svg"
+        alt="Flag of Kurdistan"
+      >
+      <div class="tag">Kurdistan • Strength • Vision • Legacy</div>
       <h1>Hamza Miran</h1>
-      <p class="subtitle">Student • Future Engineer • Builder</p>
-      <p class="quote">No Friends But The Mountains.</p>
-      <div class="buttons">
-        <a href="#about" class="btn btn-primary">Explore</a>
-        <a href="#vision" class="btn btn-secondary">My Vision</a>
+      <p class="hero-subtitle">Student • Future Engineer • Builder of Legacy</p>
+      <p class="hero-quote">
+        No Friends But The Mountains. A journey built on discipline, ambition, identity,
+        and the vision to create something lasting.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary">Enter the Vision</a>
+        <a href="#legacy" class="btn btn-secondary">See the Legacy</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <h3>01</h3>
+          <p>Identity rooted in Kurdistan</p>
+        </div>
+        <div class="stat-box">
+          <h3>02</h3>
+          <p>Driven by ambition and discipline</p>
+        </div>
+        <div class="stat-box">
+          <h3>03</h3>
+          <p>Focused on growth and achievement</p>
+        </div>
+        <div class="stat-box">
+          <h3>04</h3>
+          <p>Building a personal legacy</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section dark" id="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <p class="section-text">
-        I’m Hamza Miran. I’m focused on building a strong future through study, ambition, discipline, and vision.
-        My path is shaped by science, engineering, and a deep pride in identity and legacy.
+        I am Hamza Miran. I believe in building a future with purpose — through education,
+        ambition, self-respect, and vision. This website is more than a page. It is the beginning
+        of a personal identity, a digital home, and a statement of what I stand for.
       </p>
 
       <div class="cards">
         <div class="card">
           <h3>Discipline</h3>
-          <p>I believe real success is built through consistency, patience, and hard work every day.</p>
+          <p>Success is not built in one day. It is built through repeated effort, consistency, and standards that do not break under pressure.</p>
         </div>
         <div class="card">
           <h3>Ambition</h3>
-          <p>I aim high, think long term, and want to build a life that stands for something powerful.</p>
+          <p>I do not think small. I want to grow, build, achieve, and create something respected and powerful.</p>
         </div>
         <div class="card">
           <h3>Identity</h3>
-          <p>Kurdistan, mountains, strength, and legacy are more than symbols — they are part of how I see life.</p>
+          <p>Kurdistan, mountains, loyalty, strength, and pride shape the way I see life and the future I want to create.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="vision">
+  <section class="section soft" id="values">
     <div class="container">
-      <h2 class="section-title">My Vision</h2>
+      <h2 class="section-title">Core Values</h2>
       <p class="section-text">
-        This website is the beginning. A small digital home that will grow into something bigger:
-        projects, achievements, ideas, and everything I build next.
+        These are the foundations of how I want to live, build, and be remembered.
       </p>
 
       <div class="cards">
         <div class="card">
-          <h3>Engineering</h3>
-          <p>A future built on knowledge, technical skill, and international ambition.</p>
+          <h3>Honor</h3>
+          <p>Carry yourself with dignity, seriousness, and loyalty to your values.</p>
+        </div>
+        <div class="card">
+          <h3>Strength</h3>
+          <p>Real strength is not just power — it is patience, endurance, and control.</p>
         </div>
         <div class="card">
           <h3>Legacy</h3>
-          <p>To create something meaningful, respected, and lasting.</p>
+          <p>The goal is not only success, but to build something meaningful that remains.</p>
         </div>
         <div class="card">
-          <h3>Growth</h3>
-          <p>From a simple first website to a full personal brand and professional presence.</p>
+          <h3>Vision</h3>
+          <p>Think ahead. Build with intention. Create a future that reflects who you are.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    © 2026 Hamza Miran — Built with vision
+  <section class="section dark" id="vision">
+    <div class="container">
+      <h2 class="section-title">My Vision</h2>
+      <p class="section-text">
+        I want this to grow from a simple website into a full personal platform — a place for my achievements,
+        projects, goals, ideas, and everything I build next. This is the first stone in something bigger.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Education</h3>
+          <p>To keep growing through knowledge, science, and serious effort.</p>
+        </div>
+        <div class="card">
+          <h3>Engineering</h3>
+          <p>To build a future tied to skill, intelligence, and real-world value.</p>
+        </div>
+        <div class="card">
+          <h3>Presence</h3>
+          <p>To create a strong identity online that reflects taste, ambition, and confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="journey">
+    <div class="container">
+      <h2 class="section-title">The Journey</h2>
+      <p class="section-text">
+        Every legacy begins with a first step. This is mine.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Beginning</h3>
+          <p>Starting with a first live website — simple, real, and fully mine.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Growth</h3>
+          <p>Turning this space into something richer: projects, achievements, ideas, and ambition.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Master Plan</h3>
+          <p>Building a personal brand that reflects Kurdish pride, discipline, luxury, and long-term vision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="legacy">
+    <div class="container">
+      <h2 class="section-title">Legacy</h2>
+      <div class="quote-box">
+        <p>
+          “A name means nothing unless it stands for something.  
+          Build with vision. Live with pride. Leave a legacy.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Hamza Miran</p>
+    <p class="footer-line">Built with vision, pride, and mountains behind it.</p>
   </footer>
 
 </body>
